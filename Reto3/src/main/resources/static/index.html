@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <title>Retos</title>
+        <meta name="description" content=""/>
+        <meta name="viewport" content="width=device-width"/>
+        <base href="/"/>
+        <link rel="stylesheet" type="text/css" href="/css/styles.css"/>
+        <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css"/>
+        <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+        <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+
+        <script type="text/javascript" src="/js/main.js"></script>
+    </head>
+    <body>
+        <br>
+        <br>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top dropdown" id="mainNav">
+            <div class="container px-4">
+                <a class="navbar-brand" href="#page-top">Inicio</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="true" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav authenticated">
+                        <li class="nav-item authenticated" style="display:none"><a class="nav-link" href="Category.html">Categorias</a></li>
+                        <li class="nav-item authenticated" style="display:none"><a class="nav-link" href="Quadbike.html">Cuatrimotos</a></li>
+                        <li class="nav-item authenticated" style="display:none"><a class="nav-link" href="Client.html">Clientes</a></li>
+                        <li class="nav-item authenticated" style="display:none"><a class="nav-link" href="Reservation.html">Reservas</a></li>
+                        <li class="nav-item authenticated" style="display:none"><a class="nav-link" href="Admin.html">Administradores</a></li>
+                        <li class="nav-item authenticated" style="display:none"><a class="nav-link" href="Score.html">Puntajes</a></li>
+                        <li class="nav-item authenticated" style="display:none"><a class="nav-link" href="Message.html">Mensajes</a></li>
+                    </ul>
+
+                </div>
+                <div class="input-group-prepend authenticated" style="display:none;">
+                    <span id="user" style="color:  #e3f2fd;"></span>
+                    <button class="btn btn-outline-success my-2 my-sm-0 authenticated" onClick="logout()" href="#">Logout</button>
+                </div>
+
+            </div>
+        </nav>
+
+        <header class="bg-primary bg-gradient text-white">
+            <div class="container px-4 text-center">
+                <h1 class="fw-bolder" >Bienvenido</h1>
+                <p class="lead unauthenticated">Para poder visualizar los módulos por favor inicia sesión con Github</p>
+                <a class="btn btn-lg btn-light unauthenticated" href="/oauth2/authorization/github">Github!</a>
+            </div>
+        </header>
+
+        <section id="about">
+            <div class="container px-4">
+                <div class="row gx-4 justify-content-center">
+                    <div class="col-lg-8">
+                        <h2>Sobre nosotros</h2>
+                        <p class="lead">Hemos desarrollado los retos de esta manera para 
+                            cumplir con nuestra meta de trabajo en equipo y lo aplicado en 
+                            el ciclo 3 cursado, los integrantes del grupo son:</p>
+                        <ul>
+                            <li>Alexander Arango</li>
+                            <li>Sofia</li>
+                            <li>Karen</li>
+                            <li>Laura Potes</li>
+                            <li>Luis</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>
