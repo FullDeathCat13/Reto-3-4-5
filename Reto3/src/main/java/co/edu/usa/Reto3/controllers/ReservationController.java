@@ -5,6 +5,8 @@
 package co.edu.usa.Reto3.controllers;
 
 
+import co.edu.usa.Reto3.models.DTO.ContadorClientes;
+import co.edu.usa.Reto3.models.DTO.StatusReservas;
 import co.edu.usa.Reto3.models.Reservation;
 import co.edu.usa.Reto3.services.ReservationService;
 import java.util.List;
@@ -51,5 +53,20 @@ public class ReservationController {
     @PutMapping("/update")
     public ResponseEntity<Reservation> update(@RequestBody Reservation quadbike) {
         return new ResponseEntity<>(reservationServicio.updateReservation(quadbike), HttpStatus.CREATED);
+    }
+    
+    @GetMapping("/report-status")
+    public StatusReservas getReservas() {
+        return reservationServicio.getReporteStatusReservaciones();
+    }
+
+    @GetMapping("/report-dates/{dateOne}/{dateTwo}")
+    public List<Reservation> getReservasTiempo(@PathVariable("dateOne") String dateOne, @PathVariable("dateTwo") String dateTwo) {
+        return reservationServicio.getReportesTiempoReservaciones(dateOne, dateTwo);
+    }
+
+    @GetMapping("/report-clients")
+    public List<ContadorClientes> getClientes() {
+        return reservationServicio.servicioTopClientes();
     }
 }

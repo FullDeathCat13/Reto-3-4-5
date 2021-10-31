@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package co.edu.usa.Reto3.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -21,28 +20,28 @@ import javax.persistence.Table;
  * @author Alexande Arango
  */
 @Entity
-@Table(name="reservation")
+@Table(name = "reservation")
 public class Reservation {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idReservation;
     private Date startDate;
     private Date devolutionDate;
-    private String status;
-    
+    private String status = "created";
 
     @ManyToOne
-    @JoinColumn(name="quadbike_id", nullable = false)
+    @JoinColumn(name = "quadbike_id", nullable = false)
     @JsonIgnoreProperties({"reservations"})
     private Quadbike quadbike;
-    
+
     @ManyToOne
-    @JoinColumn(name="client_id", nullable = false)
+    @JoinColumn(name = "client_id", nullable = false)
     @JsonIgnoreProperties({"reservations", "messages"})
     private Client client;
-    
+
     private String score;
-    
+
     public Integer getIdReservation() {
         return idReservation;
     }
@@ -98,5 +97,5 @@ public class Reservation {
     public void setScore(String score) {
         this.score = score;
     }
-    
+
 }

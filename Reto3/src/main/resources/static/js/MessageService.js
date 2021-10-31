@@ -17,7 +17,7 @@ var getAll = function () {
             alert('ha sucedido un problema');
         }
     });
-}
+};
 
 
 var getAllQuadbike = function (idQuadbike) {
@@ -59,7 +59,7 @@ var getAllClient = function (idClient) {
             select += `</select>`;
             $("#client-select").html(select);
             
-            if (idQuadbike!=='undefined' && idClient!==null){
+            if (idClient!=='undefined' && idClient!==null){
                 $("#client").val(idClient);
             }
             
@@ -200,8 +200,7 @@ var edit = function (idMessage, messageText, idQuadbike, idClient) {
     getAllClient(idClient);
     $("#tituloModalMessage").html('Actualizar Mensaje');
     $("#idMessage").val(idMessage);
-    $("#name").val(name);
-    $("#description").val(description);
+    $("#messageText").val(messageText);
     $('#modalMessage').modal('show');
 };
 

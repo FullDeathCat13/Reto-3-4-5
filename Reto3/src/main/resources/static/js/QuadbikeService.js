@@ -24,15 +24,15 @@ var getAllCategory = function (idCategory) {
         type: 'GET',
         dataType: 'json',
         success: function (respuesta) {
-            var select = `<select class="form-select" id="category">`;
+            var select = `<select class="form-select" id="idCategory">`;
             for (var i = 0; i < respuesta.length; i++) {
                 select += `<option value="${respuesta[i].id}">${respuesta[i].name}</option>`;
             }
             select += `</select>`;
             $("#category-select").html(select);
-
+            console.log(idCategory);
             if (idCategory !== 'undefined' && idCategory !== null) {
-                $("#category").val(idCategory);
+                $("#idCategory").val(idCategory);
             }
 
         },
@@ -119,9 +119,9 @@ var updateChanges = function () {
             id: +$("#id").val(),
             name: $("#name").val(),
             brand: $("#brand").val(),
-            year: $("#year").val(),
+            year: +$("#year").val(),
             category: {
-                id: $("#category").val
+                id: +$("#idCategory").val()
             },
             description: $("#description").val()
         };
@@ -132,9 +132,9 @@ var updateChanges = function () {
         payload = {
             name: $("#name").val(),
             brand: $("#brand").val(),
-            year: $("#year").val(),
+            year: +$("#year").val(),
             category: {
-                id: $("#category").val
+                id: +$("#idCategory").val()
             },
             description: $("#description").val()
         };
@@ -145,7 +145,7 @@ var updateChanges = function () {
     if ($("#name").val() === '' ||
             $("#brand").val() === '' ||
             $("#description").val() === '' ||
-            $("#category").val() === '' ||
+            $("#idCategory").val() === '' ||
             $("#year").val() === '') {
 
         showMenssage('Todos los campos son obligatorios!!');

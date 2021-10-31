@@ -110,7 +110,7 @@ var updateChanges = function () {
     } else {
         console.log("guardando ", payload);
         console.log("ruta ", ruta);
-        console.log("method ", method);s
+        console.log("method ", method);
 
         $.ajax({
             url: ruta,
